@@ -6,9 +6,29 @@
 - npm. https://www.npmjs.com/get-npm 
 - truffle. Once you have npm run: `npm install -g truffle`
 
+### Setting up RSK node
+
+To install a node you should simply follow the wiki [here](https://github.com/rsksmart/rskj/wiki/Install-RskJ-and-join-the-RSK-Orchid-Mainnet-Beta).
+
+Once installed, start it up pointing to regtest (to avoid the need to sync with testnet or mainnet).
+
+If you are using the fatjar you should simply run the following command:
+```
+java -cp <PATH-TO-THE-RSKJ-FATJAR> co.rsk.Start --regtest
+```
+
 ### Additional configuration
 
 You will have to configure the network were you will be deploying your contracts. To do so go to `truffle-config.js` and uncomment the existing networks or add a new one. The file comes with a thourough explanation on how to do it.
+
+To configure the default regtest rskj network you can use this:
+```
+    rsk: {
+      host: "127.0.0.1",
+      port: 4444,
+      network_id: "*"
+    }
+```
 
 ## How to deploy the contract
 
